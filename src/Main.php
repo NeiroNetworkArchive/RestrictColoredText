@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace NeiroNetwork\ChatColor;
+namespace NeiroNetwork\ChatStyleRestrictor;
 
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerChatEvent;

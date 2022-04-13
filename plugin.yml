@@ -1,5 +1,5 @@
-name: ChatColor
+name: ChatStyleRestrictor
 version: 0.0.1
-main: NeiroNetwork\ChatColor\Main
+main: NeiroNetwork\ChatStyleRestrictor\Main
 api: 4.0.0
-src-namespace-prefix: NeiroNetwork\ChatColor
+src-namespace-prefix: NeiroNetwork\ChatStyleRestrictor
