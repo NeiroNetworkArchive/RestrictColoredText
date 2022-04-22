@@ -6,18 +6,22 @@ namespace NeiroNetwork\ChatStyleRestrictor;
 
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerChatEvent;
+use pocketmine\permission\DefaultPermissions;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat;
 
 class Main extends PluginBase implements Listener{
-	
+
 	public function onEnable() : void{
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 	}
-	
+
+	/**
+	 * @priority HIGHEST
+	 */
 	public function onPlayerChatEvent(PlayerChatEvent $event){
 		$player = $event->getPlayer();
-		if(!$this->getServer()->isOp($player->getName())){
+		if(!$player->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
 			$event->setMessage(TextFormat::clean($event->getMessage()));
 		}
 	}
