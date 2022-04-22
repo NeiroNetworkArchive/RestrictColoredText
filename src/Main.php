@@ -16,6 +16,9 @@ class Main extends PluginBase implements Listener{
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 	}
 
+	/**
+	 * @priority HIGHEST
+	 */
 	public function onPlayerChatEvent(PlayerChatEvent $event){
 		$player = $event->getPlayer();
 		if(!$player->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
