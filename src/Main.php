@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace NeiroNetwork\ChatStyleRestrictor;
 
+use pocketmine\block\utils\SignText;
+use pocketmine\event\block\SignChangeEvent;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerChatEvent;
 use pocketmine\permission\DefaultPermissions;
@@ -23,6 +25,17 @@ class Main extends PluginBase implements Listener{
 		$player = $event->getPlayer();
 		if(!$player->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
 			$event->setMessage(TextFormat::clean($event->getMessage()));
+		}
+	}
+
+	/**
+	 * @priority HIGHEST
+	 */
+	public function onSignChangeEvent(SignChangeEvent $event){
+		$player = $event->getPlayer();
+		if(!$player->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+			$newLines = array_map(fn($line) => TextFormat::clean($line), $event->getNewText()->getLines());
+			$event->setNewText(new SignText($newLines));
 		}
 	}
 }
