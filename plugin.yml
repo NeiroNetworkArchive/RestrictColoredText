@@ -1,5 +1,5 @@
-name: ChatStyleRestrictor
+name: RestrictColoredText
 version: 0.0.1
-main: NeiroNetwork\ChatStyleRestrictor\Main
+main: NeiroNetwork\RestrictColoredText\Main
 api: 4.0.0
-src-namespace-prefix: NeiroNetwork\ChatStyleRestrictor
+src-namespace-prefix: NeiroNetwork\RestrictColoredText

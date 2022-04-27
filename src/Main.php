@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace NeiroNetwork\ChatStyleRestrictor;
+namespace NeiroNetwork\RestrictColoredText;
 
 use pocketmine\block\utils\SignText;
 use pocketmine\event\block\SignChangeEvent;
