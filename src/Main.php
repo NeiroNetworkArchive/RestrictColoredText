@@ -21,7 +21,7 @@ class Main extends PluginBase implements Listener{
 	/**
 	 * @priority HIGHEST
 	 */
-	public function onPlayerChatEvent(PlayerChatEvent $event){
+	public function onPlayerChat(PlayerChatEvent $event) : void{
 		$player = $event->getPlayer();
 		if(!$player->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
 			$event->setMessage(TextFormat::clean($event->getMessage()));
@@ -31,7 +31,7 @@ class Main extends PluginBase implements Listener{
 	/**
 	 * @priority HIGHEST
 	 */
-	public function onSignChangeEvent(SignChangeEvent $event){
+	public function onSignChange(SignChangeEvent $event) : void{
 		$player = $event->getPlayer();
 		if(!$player->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
 			$newLines = array_map(fn($line) => TextFormat::clean($line), $event->getNewText()->getLines());
